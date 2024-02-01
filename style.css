@@ -1,18 +1,58 @@
+@font-face {
+    font-family: steelfish;
+    src: url(steelfish.otf);
+}
+
+@font-face {
+    font-family: manrope;
+    src: url(manrope.thin.otf);
+}
+
 body {
     background-color: #f7f6f6;
     margin: 0;
     padding: 0;
     height: 100%;
+    font-family:manrope;
 }
 
-.btn {
-    font-size: 2rem;
-    font-weight: 700;
-    padding: 0.5em 1em;
-    color: aqua;
-    background-color: lightcoral;
-    border: 10px solid red;
-    border-radius: 5px;
+/* create fluid typography*/
+
+.heading {
+    font: normal 300px steelfish;
+}
+
+.scroll-area, .scroll-container {
+    height: 1200px;
+}
+
+.scroll-container {
+    overflow: auto;
+    scroll-snap-type: y mandatory;
+}
+
+.scroll-area {
+    scroll-snap-align: center;
 }
 
 
+.intro {
+    margin-left: 3%;
+    font-size: 300%;
+}
+
+
+.wrapper{
+    cursor: default;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper::before {
+    position: absolute;
+    width: 140px;
+    left: calc(50% - 70px);
+    content: attr(data-tooltip);
+}
