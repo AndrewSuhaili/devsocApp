@@ -1,14 +1,13 @@
 gsap.registerPlugin(ScrollTrigger);
 
 ScrollTrigger.defaults({
-    toggleActions: "retart pause resume pause",
     scroller:  ".scroll-container"
 });
 
 gsap.to('.sky', {
     scrollTrigger: {
-        trigger: "#page2", // Make sure this matches the ID in your HTML
-        toggleActions: "restart pause reverse reset"
+        trigger: "#page2",
+        toggleActions: "play none none none",
     },
     duration: 4,
     background: "linear-gradient(to bottom, #FFD700, #87CEEB)",
@@ -17,8 +16,8 @@ gsap.to('.sky', {
 
 gsap.to('.sky', {
     scrollTrigger: {
-        trigger: "#page3", // Make sure this matches the ID in your HTML
-        toggleActions: "restart pause reverse pause"
+        trigger: "#page3",
+        toggleActions: "play none none none"
     },
     duration: 4,
     background: "linear-gradient(to bottom, #FF8C00, #FFD700)",
