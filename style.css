@@ -1,11 +1,11 @@
 @font-face {
     font-family: steelfish;
-    src: url(steelfish.otf);
+    src: url(/fonts/steelfish.otf);
 }
 
 @font-face {
     font-family: manrope;
-    src: url(manrope.thin.otf);
+    src: url(/fonts/manrope.thin.otf);
 }
 
 body {
@@ -13,46 +13,65 @@ body {
     margin: 0;
     padding: 0;
     height: 100%;
-    font-family:manrope;
+    font-family: manrope;
 }
 
 /* create fluid typography*/
-
 .heading {
-    font: normal 300px steelfish;
+    font: calc(10vw) steelfish;
+    margin-left: 3%;
+    margin-bottom: 0;
+    margin-top: 0;
 }
 
 .scroll-area, .scroll-container {
-    height: 1200px;
+    height: 100vh;
 }
 
 .scroll-container {
-    overflow: auto;
+    overflow: auto; /* for when content doesn't fit in parent box */
     scroll-snap-type: y mandatory;
 }
 
 .scroll-area {
     scroll-snap-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* opposite axis to align-items */
 }
-
 
 .intro {
     margin-left: 3%;
-    font-size: 300%;
+    font-size: calc(1.5vw);
 }
 
-
-.wrapper{
-    cursor: default;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.sky {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #87CEEB, #f0f9ff);
+    z-index: -1; 
 }
 
-.wrapper::before {
+.overlay-black{
     position: absolute;
-    width: 140px;
-    left: calc(50% - 70px);
-    content: attr(data-tooltip);
+    top: 0; 
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+    background-color:black;
+    animation-name:fadeIn;
+    animation-duration:4s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
 }

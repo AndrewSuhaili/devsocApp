@@ -6,19 +6,25 @@
         <script src="https://kit.fontawesome.com/0769ab84bf.js" crossorigin="anonymous"></script>
     </head>
 
+    <div class="sky">
+        <div class="sun"></div>
+    </div>
+
+    <div class="overlay-black"></div>
+
     <body>
         <div class="scroll-container">
-            <div class="scroll-area">
+            <div class="scroll-area" id="page1">
                 <h1 class="heading"> Who Am I? </h1>
-                <div class="intro">Hi, my name is Andrew Suhaili. I am a 3rd year Actuarial Studies/Compsci student </div>
+                <div class="intro">Hi, my name is Andrew Suhaili. I am a 3rd year Actuarial Studies/Computer Science student at UNSW</div>
             </div>
 
-            <div class="scroll-area">
+            <div class="scroll-area" id="page2">
                 <h1 class="heading"> What are my hobbies?</h1>
             </div>
 
-            <div class="scroll-area">
-                <h1 class="heading"> I'd love to have a chat</h1>
+            <div class="scroll-area" id="page3">
+                <h1 class="heading"> Contact & Socials</h1>
                 <div class="wrapper">
                     <div class="icon Facebook">
                         <a href="https://www.facebook.com/andrew.suhaili/" >
@@ -29,6 +35,10 @@
                 </div>
             </div>
         </div>
-        
+
+
+        <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js?r=5426"></script>
+        <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js"></script>
+        <script src="script.js"></script>
     </body>
 </html>
